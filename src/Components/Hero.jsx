@@ -16,7 +16,7 @@ const Hero = () => {
           transition={{ duration: 0.5, delay: 0.5, ease: "easeInOut" }}
           className="absolute flex flex-col gap-24 top-1/2 left-1/2 text-center -translate-x-1/2 translate-y-1/2"
         >
-          <h1 className="font-extrabold sm:text-6xl text-4xl bg-gradient-to-r from-[#00b1b1] to-[#da058c] bg-clip-text text-transparent ">
+          <h1 className="font-extrabold sm:text-6xl text-4xl bg-gradient-to-r from-teal to-pink bg-clip-text text-transparent ">
             Are your BAGS PACKED and READY?
           </h1>
           <a href="#toppicks">
