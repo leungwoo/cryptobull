@@ -2,13 +2,20 @@ import React from "react";
 
 const Header = () => {
   return (
-    <div className="flex flex-row sticky justify-between items-center h-12 bg-teal-500 px-6 ">
+    <div className="flex flex-row sticky justify-between items-center h-12 bg-teal-500 px-10 ">
       <div>
-        <h1>Icon</h1>
+        <a href="#home">
+          {" "}
+          <h1>Logo</h1>
+        </a>
       </div>
       <div className="flex flex-row gap-5">
-        <p>Home</p>
-        <p>Portfolio</p>
+        <a href="#news">
+          <p>News</p>
+        </a>
+        <a href="#toppicks">
+          <p>Top Picks</p>
+        </a>
       </div>
     </div>
   );
