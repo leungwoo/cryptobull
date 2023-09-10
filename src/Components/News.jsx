@@ -1,5 +1,6 @@
 import { useState, useEffect } from "react";
 import axios from "axios";
+import Loading from "./Loading";
 
 const News = () => {
   const [news, setNews] = useState([]);
@@ -50,19 +51,30 @@ const News = () => {
 
   return (
     <div id="news" className="bg-gradient-to-tr from-tertiary to-pink">
-      {news.map((item, index) => {
-        return (
-          <div key={index}>
-            <div className="flex flex-col items-center justify-center">
-              <img src={item.thumbnail} alt="thumbnail" />
-              <h1 className="text-4xl font-bold text-center text-white">
-                {item.title}
-              </h1>
-              <p className="text-white">{item.description}</p>
-            </div>
-          </div>
-        );
-      })}
+      {loading && <Loading />}
+
+      <div className="flex flex-row flex-wrap gap-5 items-center justify-center mt-10">
+        {!loading &&
+          news.map((item, index) => {
+            return (
+              <div key={index} className="max-w-[500px] h-[700px]">
+                <div className="flex flex-col items-center justify-center bg-teal bg-opacity-30 border border-teal rounded-b-xl ">
+                  <img
+                    src={item.thumbnail}
+                    alt="thumbnail"
+                    className=" object-cover"
+                  />
+                  <div className="p-5">
+                    <h1 className="md:text-4xl text-xl font-bold text-center text-white">
+                      {item.title}
+                    </h1>
+                    <p className="text-gray-300">{item.description}</p>
+                  </div>
+                </div>
+              </div>
+            );
+          })}
+      </div>
     </div>
   );
 };
