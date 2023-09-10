@@ -5,13 +5,13 @@ const Header = () => {
   return (
     <div className="flex flex-row sticky justify-between items-center h-24 bg-tertiary px-10 ">
       <motion.div
-        initial={{ opacity: 0, x: -100 }}
-        animate={{ opacity: 1, x: 0 }}
-        transition={{ duration: 1 }}
+        initial={{ opacity: 0, scale: 0.5, y: -100 }}
+        animate={{ opacity: 1, scale: 1.0, y: 0 }}
+        transition={{ duration: 1, type: "spring", stiffness: 20 }}
         className="flex items-center justify-center"
       >
         <img
-          className="w-24 h-24 lg:w-32 lg:h-32"
+          className="w-28 h-28 lg:w-32 lg:h-32"
           src="/assets/CryptoBull-removebg-preview.png"
           alt="logo"
         />
