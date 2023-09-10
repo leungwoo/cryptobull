@@ -57,7 +57,10 @@ const News = () => {
         {!loading &&
           news.map((item, index) => {
             return (
-              <div key={index} className="max-w-[500px] h-[700px]">
+              <div
+                key={index}
+                className="max-w-[500px] lg:h-[700px] p-5 lg:p-0"
+              >
                 <div className="flex flex-col items-center justify-center bg-teal bg-opacity-30 border border-teal rounded-b-xl ">
                   <img
                     src={item.thumbnail}
