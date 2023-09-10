@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 import axios from "axios";
 import Loading from "./Loading";
+import Button from "./Button";
 
 const News = () => {
   const [news, setNews] = useState([]);
@@ -67,11 +68,16 @@ const News = () => {
                     alt="thumbnail"
                     className=" object-cover"
                   />
-                  <div className="p-5">
+                  <div className="p-5 flex flex-col gap-4">
                     <h1 className="md:text-4xl text-xl font-bold text-center text-white">
                       {item.title}
                     </h1>
-                    <p className="text-gray-300">{item.description}</p>
+                    <p className="text-gray-300 leading-5">
+                      {item.description}
+                    </p>
+                    <a href={`${item.url}`} target="_blank" rel="noreferrer">
+                      <Button name={"Read more"} />
+                    </a>
                   </div>
                 </div>
               </div>
