@@ -2,11 +2,26 @@ import { useState, useEffect } from "react";
 import axios from "axios";
 import Loading from "./Loading";
 import Button from "./Button";
+import NothingLoading from "./NothingLoading";
 
 const News = () => {
   const [news, setNews] = useState([]);
   const [loading, setLoading] = useState(true);
-  console.log(news);
+  const [newsLoadingMessage, setNewsLoadingMessage] = useState(
+    "Hang in there we are working on getting you the latest news 👀"
+  );
+  //console.log(news);
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      setLoading(false);
+      setNewsLoadingMessage(
+        "It appears we are having trouble getting the latest news. Please try again later"
+      );
+    }, 15000);
+    return () => {
+      clearTimeout(timer);
+    };
+  }, []);
 
   useEffect(() => {
     const getNews = async () => {
@@ -51,10 +66,16 @@ const News = () => {
   }, []);
 
   return (
-    <div id="news" className="bg-gradient-to-tr from-tertiary to-pink">
-      {loading && <Loading />}
-
-      <div className="flex flex-row flex-wrap gap-5 items-center justify-center mt-10">
+    <div
+      id="news"
+      className="bg-gradient-to-tr from-tertiary to-pink flex flex-col gap-5 items-center pt-10 pb-10"
+    >
+      <h1 className="text-teal text-xl font-bold p-5 items-center">
+        {newsLoadingMessage}
+      </h1>
+      <div className="flex flex-row flex-wrap gap-8 items-center justify-center">
+        {loading && <Loading />}
+        {!loading && news.length === 0 ? <NothingLoading /> : null}
         {!loading &&
           news.map((item, index) => {
             return (
