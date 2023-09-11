@@ -3,6 +3,7 @@ import Footer from "./Constants/Footer";
 import Hero from "./Components/Hero";
 import News from "./Components/News";
 import TopPicks from "./Components/TopPicks";
+import CoinBanner from "./Components/CoinBanner";
 
 function App() {
   return (
@@ -10,6 +11,7 @@ function App() {
       <Header />
       <div className=" flex flex-col ">
         <Hero />
+        <CoinBanner />
         <News />
         <TopPicks />
       </div>

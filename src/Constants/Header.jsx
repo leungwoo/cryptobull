@@ -12,7 +12,7 @@ const Header = () => {
       >
         <img
           className="w-28 h-28 lg:w-32 lg:h-32"
-          src="/assets/CryptoBull-removebg-preview.png"
+          src="/CryptoBull-removebg-preview.png"
           alt="logo"
         />
       </motion.div>
