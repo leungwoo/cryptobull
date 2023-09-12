@@ -29,9 +29,9 @@ const cryptoCoins = [
 
 const CoinBanner = () => {
   return (
-    <div className="w-[1440px] inline-flex flex-nowrap overflow-hidden">
-      <div className="relative w-[1440px]">
-        <div className="inline-flex animate-scroll [mask-image:_linear-gradient(to_right,transparent_0,_black_128px,_black_calc(100%-128px),transparent_100%)]">
+    <div className="max-w-[1440px] inline-flex flex-nowrap overflow-hidden [mask-image:_linear-gradient(to_right,transparent_0,_black_128px,_black_calc(100%-128px),transparent_100%)]">
+      <div className="relative max-w-[1440px]">
+        <div className="inline-flex animate-scroll ">
           {cryptoCoins.map((coin, index) => (
             <img
               key={index}
