@@ -5,6 +5,10 @@ module.exports = {
   content: ["./src/**/*.{js,jsx,ts,tsx}", "./App.jsx"],
   theme: {
     extend: {
+      backgroundImage: {
+        primary:
+          "url('https://w7.pngwing.com/pngs/453/539/png-transparent-black-background-and-smoke-smoke-effect-smoke-wisp-of-smoke-thumbnail.png')",
+      },
       colors: {
         ...blackA,
         ...mauve,
