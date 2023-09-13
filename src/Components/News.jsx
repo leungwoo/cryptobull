@@ -4,6 +4,7 @@ import Loading from "./Loading";
 import Button from "./Button";
 import NothingLoading from "./NothingLoading";
 import withSocialIcons from "./withSocialIcons";
+import Title from "./Title";
 
 const dummyNewsData = [
   {
@@ -137,9 +138,9 @@ const News = () => {
   }, [apiFetchedData]);
 
   return (
-    <div
+    <section
       id="news"
-      className="bg-gradient-to-tr from-tertiary to-pink flex flex-col gap-5 items-center pt-10 pb-10"
+      className="bg-gradient-to-t from-black to-pink flex flex-col gap-5 items-center pt-20 pb-10"
     >
       {loading && (
         <h1 className="text-teal text-xl font-bold p-5 items-center">
@@ -153,41 +154,54 @@ const News = () => {
         {" "}
         Refresh
       </button> */}
+
+      <Title
+        title={"INTRODUCING"}
+        subtitle={"The Crypto Bull News"}
+        sub={"Inspired by the bulls"}
+      />
+
       <div className="flex flex-row flex-wrap gap-8 items-center justify-center">
         {loading && <Loading />}
         {!loading && dummyNewsData.length === 0 ? <NothingLoading /> : null}
         {!loading &&
           dummyNewsData.map((item, index) => {
             return (
-              <div key={index} className=" max-w-lg  py-5 px-10 ">
-                <div className="hover:shadow-lg hover:shadow-white transition-all duration-200 ease-in-out p-5 shadow-md shadow-white h-[580px] gap-4 flex flex-col items-center bg-teal bg-opacity-30  rounded-br-3xl rounded-tr-3xl ">
-                  <img
-                    src={item.thumbnail}
-                    alt="thumbnail"
-                    className=" w-full h-[300px] object-cover rounded-tr-3xl border-2 border-teal"
-                  />
-                  <div className=" flex flex-col gap-2 px-4 items-center">
-                    <p className="xl:text-4xl text-2xl font-bold text-center text-white">
-                      {item.title.slice(0, 30)}
-                      {"..."}
-                    </p>
-                    <p className="text-gray-300 leading-8">
-                      {item.description.slice(0, 100)}
-                      {"..."}
-                    </p>
-                    <Button name={"Read more"}>
-                      <a href={`${item.url}`} target="_blank" rel="noreferrer">
-                        {" "}
-                        Read More{" "}
-                      </a>
-                    </Button>
+              <>
+                <div key={index} className=" max-w-lg  py-5 px-10 ">
+                  <div className="hover:shadow-lg hover:shadow-white transition-all duration-200 ease-in-out p-5 shadow-md shadow-white h-[580px] gap-4 flex flex-col items-center bg-teal bg-opacity-30  rounded-br-3xl rounded-tr-3xl ">
+                    <img
+                      src={item.thumbnail}
+                      alt="thumbnail"
+                      className=" w-full h-[300px] object-cover rounded-tr-3xl border-2 border-teal"
+                    />
+                    <div className=" flex flex-col gap-2 px-4 items-center">
+                      <p className="xl:text-4xl text-2xl font-bold text-center text-white">
+                        {item.title.slice(0, 30)}
+                        {"..."}
+                      </p>
+                      <p className="text-gray-300 leading-8">
+                        {item.description.slice(0, 100)}
+                        {"..."}
+                      </p>
+                      <Button name={"Read more"}>
+                        <a
+                          href={`${item.url}`}
+                          target="_blank"
+                          rel="noreferrer"
+                        >
+                          {" "}
+                          Read More{" "}
+                        </a>
+                      </Button>
+                    </div>
                   </div>
                 </div>
-              </div>
+              </>
             );
           })}
       </div>
-    </div>
+    </section>
   );
 };
 
