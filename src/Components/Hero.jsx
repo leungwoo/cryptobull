@@ -19,7 +19,7 @@ const Hero = () => {
             <h3 className="text-base xl:text-lg font-medium text-tertiary">
               The Bulls are in charge
             </h3>
-            <h1 className="font-extrabold sm:text-6xl leading-[50px] md:leading-[100px] text-4xl bg-gradient-to-r from-teal to-pink bg-clip-text text-transparent ">
+            <h1 className="font-bold sm:text-6xl leading-[50px] md:leading-[100px] text-4xl bg-gradient-to-r from-teal to-pink bg-clip-text text-transparent ">
               Are your BAGS PACKED and READY?
             </h1>
           </div>
