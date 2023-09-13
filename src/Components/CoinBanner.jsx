@@ -31,31 +31,31 @@ const cryptoCoins = [
   {
     image: ada,
   },
-  //   {
-  //     image: bnb,
-  //   },
-  //   {
-  //     image: polygon,
-  //   },
-  //   {
-  //     image: ltc,
-  //   },
-  //   {
-  //     image: ape,
-  //   },
+  {
+    image: bnb,
+  },
+  {
+    image: polygon,
+  },
+  {
+    image: ltc,
+  },
+  {
+    image: ape,
+  },
 
-  //   {
-  //     image: vechain,
-  //   },
-  //   {
-  //     image: stella,
-  //   },
-  //   {
-  //     image: link,
-  //   },
-  //   {
-  //     image: uniswap,
-  //   },
+  {
+    image: vechain,
+  },
+  {
+    image: stella,
+  },
+  {
+    image: link,
+  },
+  {
+    image: uniswap,
+  },
   //   {
   //     image: xrp,
   //   },
@@ -94,18 +94,16 @@ const cryptoCoins = [
 
 const CoinBanner = () => {
   return (
-    <div className="xl:max-w-[1440px] inline-flex flex-nowrap overflow-hidden [mask-image:_linear-gradient(to_right,transparent_0,_black_128px,_black_calc(100%-100px),transparent_100%)]">
-      <div className="relative xl:max-w-[1440px]">
-        <div className="inline-flex animate-scroll ">
-          {cryptoCoins.map((coin, index) => (
-            <img
-              key={index}
-              src={coin.image}
-              alt="cryptocoin"
-              className="w-20 h-20 object-cover inline-block mx-20 p-2  "
-            />
-          ))}
-        </div>
+    <div className="backdrop-blur-lg bg-opacity-20 bg-white w-screen max-w-screen-xl  inline-flex flex-nowrap overflow-hidden [mask-image:_linear-gradient(to_right,transparent_0,_black_128px,_black_calc(100%-128px),transparent_100%)]">
+      <div className="inline-flex animate-scroll ">
+        {cryptoCoins.map((coin, index) => (
+          <img
+            key={index}
+            src={coin.image}
+            alt="cryptocoin"
+            className="w-20 h-20 object-cover inline-block mx-20 p-2  "
+          />
+        ))}
       </div>
     </div>
   );

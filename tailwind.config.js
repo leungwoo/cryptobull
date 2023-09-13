@@ -7,7 +7,7 @@ module.exports = {
     extend: {
       backgroundImage: {
         primary:
-          "url('https://w7.pngwing.com/pngs/453/539/png-transparent-black-background-and-smoke-smoke-effect-smoke-wisp-of-smoke-thumbnail.png')",
+          "url('https://images.unsplash.com/photo-1523961131990-5ea7c61b2107?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2048&q=80')",
       },
       colors: {
         ...blackA,

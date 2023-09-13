@@ -3,7 +3,7 @@ import DropdownMenu from "../Components/DropDownMenu";
 
 const Header = () => {
   return (
-    <div className="flex flex-row sticky justify-between items-center h-24 bg-tertiary px-10 ">
+    <div className="flex flex-row sticky justify-between items-center h-24  px-10 ">
       <motion.div
         initial={{ opacity: 0, scale: 0.5, y: -100 }}
         animate={{ opacity: 1, scale: 1.0, y: 0 }}
