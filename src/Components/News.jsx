@@ -146,13 +146,13 @@ const News = () => {
           {newsLoadingMessage}
         </h1>
       )}
-      <button
+      {/* <button
         className="bg-teal px-4 py-2 text-lg font-semibold rounded-xl"
         onClick={() => setApiFetchedData(!apiFetchedData)}
       >
         {" "}
         Refresh
-      </button>
+      </button> */}
       <div className="flex flex-row flex-wrap gap-8 items-center justify-center">
         {loading && <Loading />}
         {!loading && dummyNewsData.length === 0 ? <NothingLoading /> : null}

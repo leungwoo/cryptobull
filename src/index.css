@@ -27,7 +27,7 @@ code {
   }
   
   .animate-scroll {
-    animation: scroll 30s linear infinite alternate; 
+    animation: scroll 50s linear infinite alternate; 
     animation-delay: -2s;/* Use 'alternate' to reverse the animation direction */
   }
   

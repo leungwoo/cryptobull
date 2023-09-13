@@ -17,12 +17,16 @@ const Header = () => {
         />
       </motion.div>
       {/* Desktop */}
-      <div className="hidden sm:flex flex-row sm:gap-10 gap-5 text-pink font-semibold sm:text-xl">
+      <div className="hidden sm:flex flex-row sm:gap-10 gap-5 text-pink font-bold sm:text-xl">
         <a href="#news">
-          <p className="hover:underline">News</p>
+          <p className="hover:text-teal transition-all duration-500 ease-in-out">
+            News
+          </p>
         </a>
         <a href="#toppicks">
-          <p className="hover:underline">Top Picks</p>
+          <p className=" hover:text-teal transition-all duration-500 ease-in-out">
+            Top Picks
+          </p>
         </a>
       </div>
       {/* Mobile */}

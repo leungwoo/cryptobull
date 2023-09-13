@@ -22,9 +22,9 @@ const cryptoCoins = [
   {
     image: btc,
   },
-  {
-    image: xrp2,
-  },
+  //   {
+  //     image: xrp2,
+  //   },
   {
     image: eth,
   },
