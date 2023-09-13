@@ -3,6 +3,7 @@ import axios from "axios";
 import Loading from "./Loading";
 import Button from "./Button";
 import NothingLoading from "./NothingLoading";
+import withSocialIcons from "./withSocialIcons";
 
 const dummyNewsData = [
   {
@@ -158,7 +159,7 @@ const News = () => {
         {!loading &&
           dummyNewsData.map((item, index) => {
             return (
-              <div key={index} className=" max-w-lg  p-5 ">
+              <div key={index} className=" max-w-lg  py-5 px-10 ">
                 <div className="hover:shadow-lg hover:shadow-white transition-all duration-200 ease-in-out p-5 shadow-md shadow-white h-[580px] gap-4 flex flex-col items-center bg-teal bg-opacity-30  rounded-br-3xl rounded-tr-3xl ">
                   <img
                     src={item.thumbnail}
