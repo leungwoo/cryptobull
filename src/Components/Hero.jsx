@@ -1,5 +1,3 @@
-import { motion } from "framer-motion";
-
 import Header from "../Constants/Header";
 import Button from "./Button";
 import CoinBanner from "./CoinBanner";
