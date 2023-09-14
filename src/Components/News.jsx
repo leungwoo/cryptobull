@@ -141,7 +141,7 @@ const News = () => {
   return (
     <section
       id="news"
-      className="bg-gradient-to-b from-slate-950 via-pink to-slate-950 flex flex-col gap-5 items-center pt-24 pb-10 px-10"
+      className="bg-gradient-to-b from-slate-950 via-pink to-slate-950 flex flex-col gap-5 items-center py-24 pb-10 px-10"
     >
       {loading && (
         <h1 className="text-teal text-xl font-bold p-5 items-center">
@@ -201,7 +201,7 @@ const News = () => {
                 <SpotlightCard>
                   <div
                     key={index}
-                    className="relative h-full bg-slate-900 p-6 pb-8 rounded-[inherit] z-20 overflow-hidden"
+                    className="relative h-[300px] bg-slate-900 p-6 pb-8 rounded-[inherit] z-20 overflow-hidden"
                   >
                     {/* Radial gradient */}
                     <div
@@ -258,5 +258,5 @@ const News = () => {
     </section>
   );
 };
-
-export default News;
+const NewsWithIcons = withSocialIcons(News);
+export default NewsWithIcons;

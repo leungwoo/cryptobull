@@ -38,7 +38,7 @@ const TopPicks = () => {
   return (
     <section
       id="toppicks"
-      className="bg-slate-950 px-10 py-24 bg-gradient-to-b from-slate-950 via-teal to-slate-950"
+      className="bg-slate-950 px-10 py-24 bg-gradient-to-br from-slate-950 via-teal to-slate-950"
     >
       <Title
         title={"What's Hot"}

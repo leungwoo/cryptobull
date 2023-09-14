@@ -27,7 +27,7 @@ const Hero = () => {
           </a>
         </div>
       </div>
-      <div className="absolute -bottom-10">
+      <div className="absolute -bottom-10 z-50">
         <CoinBanner />
       </div>
     </div>
