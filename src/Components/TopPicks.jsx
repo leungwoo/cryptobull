@@ -36,7 +36,10 @@ const TopPicks = () => {
   }, []);
 
   return (
-    <div id="toppicks" className="bg-slate-950 p-10">
+    <section
+      id="toppicks"
+      className="bg-slate-950 p-10 bg-gradient-to-b from-slate-950 via-teal to-slate-950"
+    >
       <Title
         title={"What's Hot"}
         subtitle={"Top Crypto Distruptors"}
@@ -60,7 +63,7 @@ const TopPicks = () => {
               className="absolute bottom-0 translate-y-1/2 left-1/2 -translate-x-1/2 pointer-events-none -z-10 w-1/2 aspect-square"
               aria-hidden="true"
             >
-              <div className="absolute inset-0 translate-z-0 bg-slate-800 rounded-full blur-[80px]"></div>
+              <div className="absolute inset-0 translate-z-0 bg-teal rounded-full blur-[90px]"></div>
             </div>
             <div className="flex flex-col h-full items-center text-center">
               {/* Image */}
@@ -215,7 +218,7 @@ const TopPicks = () => {
           </div>
         </SpotlightCard>
       </Spotlight>
-    </div>
+    </section>
   );
 };
 

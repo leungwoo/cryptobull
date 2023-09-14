@@ -3,11 +3,11 @@ const SocialIcons = () => {
     <div className="flex flex-col gap-4 justify-end">
       <a href="https://www.twitter.com" target="_blank" rel="noreferrer">
         <svg
-          width="25"
-          height="25"
+          width="30"
+          height="30"
           viewBox="0 0 15 15"
           fill="none"
-          color="#00b1b1"
+          color="#94A3B8"
           xmlns="http://www.w3.org/2000/svg"
           className="hover:text-pink transition-all duration-300 ease-in-out"
         >
@@ -25,11 +25,11 @@ const SocialIcons = () => {
         rel="noreferrer"
       >
         <svg
-          width="25"
-          height="25"
+          width="30"
+          height="30"
           viewBox="0 0 15 15"
           fill="none"
-          color="#00b1b1"
+          color="#94A3B8"
           xmlns="http://www.w3.org/2000/svg"
           className="hover:text-pink transition-all duration-300 ease-in-out"
         >
@@ -47,11 +47,11 @@ const SocialIcons = () => {
         rel="noreferrer"
       >
         <svg
-          width="25"
-          height="25"
+          width="30"
+          height="30"
           viewBox="0 0 15 15"
           fill="none"
-          color="#00b1b1"
+          color="#94A3B8"
           xmlns="http://www.w3.org/2000/svg"
           className="hover:text-pink transition-all duration-300 ease-in-out"
         >
