@@ -159,7 +159,7 @@ const News = () => {
       <Title
         title={"INTRODUCING"}
         subtitle={"The Crypto Bull News"}
-        sub={"Inspired by the bulls"}
+        sub={"Inspired by the Bulls"}
       />
 
       <Spotlight className="max-w-sm mx-auto grid gap-6 lg:grid-cols-3 items-start lg:max-w-none group  p-10   ">
