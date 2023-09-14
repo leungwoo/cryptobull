@@ -101,7 +101,7 @@ const CoinBanner = () => {
             key={index}
             src={coin.image}
             alt="cryptocoin"
-            className="w-20 h-20 object-cover inline-block mx-20 p-2  "
+            className="w-16 h-16 object-cover inline-block mx-20 p-2  "
           />
         ))}
       </div>

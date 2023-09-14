@@ -17,7 +17,7 @@ const Header = () => {
         />
       </motion.div>
       {/* Desktop */}
-      <div className="hidden sm:flex flex-row sm:gap-10 gap-5 text-pink font-bold sm:text-xl">
+      <div className="hidden sm:flex flex-row sm:gap-10 gap-5 text-tertiary font-semibold sm:text-xl">
         <a href="#news">
           <p className="hover:text-teal transition-all duration-500 ease-in-out">
             News

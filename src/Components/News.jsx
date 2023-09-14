@@ -141,7 +141,7 @@ const News = () => {
   return (
     <section
       id="news"
-      className="bg-gradient-to-b from-slate-950 via-pink to-slate-950 flex flex-col gap-5 items-center pt-20 pb-10"
+      className="bg-gradient-to-b from-slate-950 via-pink to-slate-950 flex flex-col gap-5 items-center pt-20 pb-10 px-10"
     >
       {loading && (
         <h1 className="text-teal text-xl font-bold p-5 items-center">
@@ -162,7 +162,7 @@ const News = () => {
         sub={"Inspired by the Bulls"}
       />
 
-      <Spotlight className="max-w-sm mx-auto grid gap-6 lg:grid-cols-3 items-start lg:max-w-none group  p-10   ">
+      <Spotlight className="max-w-lg mx-auto grid gap-6 md:grid-cols-2 items-start lg:max-w-none group ">
         {loading && <Loading />}
         {!loading && dummyNewsData.length === 0 ? <NothingLoading /> : null}
         {!loading &&
@@ -208,9 +208,9 @@ const News = () => {
                       className="absolute bottom-0 translate-y-1/2 left-1/2 -translate-x-1/2 pointer-events-none -z-10 w-1/2 aspect-square"
                       aria-hidden="true"
                     >
-                      <div className="absolute inset-0 translate-z-0 bg-slate-800 rounded-full blur-[80px]"></div>
+                      <div className="absolute inset-0 translate-z-0 bg-slate-800 rounded-full blur-[90px]"></div>
                     </div>
-                    <div className="flex flex-col h-full items-center text-center gap-2 ">
+                    <div className="flex flex-col h-full items-center text-center">
                       {/* Image */}
                       <div className="relative inline-flex">
                         <div
@@ -222,7 +222,7 @@ const News = () => {
                           src={item.thumbnail}
                           width={200}
                           height={200}
-                          alt="thumbnail"
+                          alt="Card 01"
                         />
                       </div>
                       {/* Text */}
