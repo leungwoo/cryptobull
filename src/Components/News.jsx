@@ -141,7 +141,7 @@ const News = () => {
   return (
     <section
       id="news"
-      className="bg-gradient-to-b from-slate-950 via-pink to-slate-950 flex flex-col gap-5 items-center pt-20 pb-10 px-10"
+      className="bg-gradient-to-b from-slate-950 via-pink to-slate-950 flex flex-col gap-5 items-center pt-24 pb-10 px-10"
     >
       {loading && (
         <h1 className="text-teal text-xl font-bold p-5 items-center">

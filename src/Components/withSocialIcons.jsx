@@ -5,7 +5,7 @@ const withSocialIcons = (WrappedComponent) => {
     return (
       <div className="relative">
         <WrappedComponent {...props} />
-        <div className="fixed top-1/4 right-2 ">
+        <div className="fixed top-1/4 right-2">
           <SocialIcons />
         </div>
       </div>
