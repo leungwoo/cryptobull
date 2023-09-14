@@ -1,6 +1,7 @@
 import Header from "../Constants/Header";
 import Button from "./Button";
 import CoinBanner from "./CoinBanner";
+import withSocialIcons from "../Components/withSocialIcons";
 
 const Hero = () => {
   return (
@@ -33,4 +34,5 @@ const Hero = () => {
   );
 };
 
-export default Hero;
+const HeroWithIcons = withSocialIcons(Hero);
+export default HeroWithIcons;

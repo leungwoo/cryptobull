@@ -1,18 +1,15 @@
-//import Header from "./Constants/Header";
+////import Header from "./Constants/Header";
 import Footer from "./Constants/Footer";
 import Hero from "./Components/Hero";
 import News from "./Components/News";
 import TopPicks from "./Components/TopPicks";
-//import CoinBanner from "./Components/CoinBanner";
-import withSocialIcons from "./Components/withSocialIcons";
+import HeroWithIcons from "./Components/Hero";
 
 function App() {
   return (
     <div className="max-w-[1440px] mx-auto ">
-      {/* <Header /> */}
       <div className=" flex flex-col ">
-        <Hero />
-        {/* <CoinBanner /> */}
+        <HeroWithIcons />
         <News />
         <TopPicks />
       </div>
@@ -20,5 +17,5 @@ function App() {
     </div>
   );
 }
-const AppWithIcons = withSocialIcons(App);
-export default AppWithIcons;
+//const AppWithIcons = withSocialIcons(App);
+export default App;

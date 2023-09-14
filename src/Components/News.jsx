@@ -201,7 +201,7 @@ const News = () => {
                 <SpotlightCard>
                   <div
                     key={index}
-                    className="relative h-full bg-slate-900 p-6 pb-8 rounded-3xl z-20 overflow-hidden"
+                    className="relative h-full bg-slate-900 p-6 pb-8 rounded-[inherit] z-20 overflow-hidden"
                   >
                     {/* Radial gradient */}
                     <div
@@ -218,7 +218,7 @@ const News = () => {
                           aria-hidden="true"
                         ></div>
                         <img
-                          className="inline-flex rounded-xl"
+                          className="inline-flex rounded-lg"
                           src={item.thumbnail}
                           width={200}
                           height={200}

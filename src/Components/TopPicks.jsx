@@ -57,7 +57,7 @@ const TopPicks = () => {
       <Spotlight className="max-w-sm mx-auto grid gap-6 lg:grid-cols-3 items-start lg:max-w-none group ">
         {/* Card #1 */}
         <SpotlightCard>
-          <div className="relative h-full bg-slate-900 p-6 pb-8 rounded-3xl z-20 overflow-hidden">
+          <div className="relative h-full bg-slate-900 p-6 pb-8 rounded-[inherit] z-20 overflow-hidden">
             {/* Radial gradient */}
             <div
               className="absolute bottom-0 translate-y-1/2 left-1/2 -translate-x-1/2 pointer-events-none -z-10 w-1/2 aspect-square"
@@ -73,7 +73,7 @@ const TopPicks = () => {
                   aria-hidden="true"
                 ></div>
                 <img
-                  className="inline-flex rounded-xl"
+                  className="inline-flex rounded-lg"
                   src={
                     "https://pbs.twimg.com/card_img/1699602423562563584/cL80BrKD?format=jpg&name=4096x4096"
                   }
@@ -127,7 +127,7 @@ const TopPicks = () => {
                   aria-hidden="true"
                 ></div>
                 <img
-                  className="inline-flex rounded-xl"
+                  className="inline-flex rounded-lg"
                   src={
                     "https://global-uploads.webflow.com/63c52465b53a441b76587e8f/645b60777663517ffaaac360_TAP%20opengraph.jpg"
                   }
@@ -181,7 +181,7 @@ const TopPicks = () => {
                   aria-hidden="true"
                 ></div>
                 <img
-                  className="inline-flex rounded-xl"
+                  className="inline-flex rounded-lg"
                   src={
                     "https://u.today/sites/default/files/styles/1600x900/public/2023-08/37101_1.jpg"
                   }
