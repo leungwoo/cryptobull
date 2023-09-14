@@ -57,7 +57,7 @@ const TopPicks = () => {
       <Spotlight className="max-w-sm mx-auto grid gap-6 lg:grid-cols-3 items-start lg:max-w-none group ">
         {/* Card #1 */}
         <SpotlightCard>
-          <div className="relative h-full bg-slate-900 p-6 pb-8 rounded-[inherit] z-20 overflow-hidden">
+          <div className="relative h-full bg-slate-900 p-6 pb-8 rounded-lg z-20 overflow-hidden">
             {/* Radial gradient */}
             <div
               className="absolute bottom-0 translate-y-1/2 left-1/2 -translate-x-1/2 pointer-events-none -z-10 w-1/2 aspect-square"
@@ -111,7 +111,7 @@ const TopPicks = () => {
         </SpotlightCard>
         {/* Card #2 */}
         <SpotlightCard>
-          <div className="relative h-full bg-slate-900 p-6 pb-8 rounded-[inherit] z-20 overflow-hidden">
+          <div className="relative h-full bg-slate-900 p-6 pb-8 rounded-lg z-20 overflow-hidden">
             {/* Radial gradient */}
             <div
               className="absolute bottom-0 translate-y-1/2 left-1/2 -translate-x-1/2 pointer-events-none -z-10 w-1/2 aspect-square"
@@ -165,7 +165,7 @@ const TopPicks = () => {
         </SpotlightCard>
         {/* Card #3 */}
         <SpotlightCard>
-          <div className="relative h-full bg-slate-900 p-6 pb-8 rounded-[inherit] z-20 overflow-hidden">
+          <div className="relative h-full bg-slate-900 p-6 pb-8 rounded-lg z-20 overflow-hidden">
             {/* Radial gradient */}
             <div
               className="absolute bottom-0 translate-y-1/2 left-1/2 -translate-x-1/2 pointer-events-none -z-10 w-1/2 aspect-square"
