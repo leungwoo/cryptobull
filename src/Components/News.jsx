@@ -201,7 +201,7 @@ const News = () => {
                 <SpotlightCard>
                   <div
                     key={index}
-                    className="relative h-full bg-slate-900 p-6 pb-8 rounded-[inherit] z-20 overflow-hidden"
+                    className="relative h-full bg-slate-900 p-6 pb-8 rounded-3xl z-20 overflow-hidden"
                   >
                     {/* Radial gradient */}
                     <div
