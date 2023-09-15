@@ -162,7 +162,7 @@ const News = () => {
         sub={"Inspired by the Bulls"}
       />
 
-      <Spotlight className="flex flex-row flex-wrap gap-6 items-center justify-center px-5 sm:px-0">
+      <Spotlight className="flex flex-row flex-wrap gap-6 items-center justify-center ">
         {loading && <Loading />}
         {!loading && dummyNewsData.length === 0 ? <NothingLoading /> : null}
         {!loading &&
@@ -201,7 +201,7 @@ const News = () => {
                 <SpotlightCard>
                   <div
                     key={index}
-                    className="relative flex-1 min-w-[280px] h-full bg-slate-900 p-10 pb-8  z-20 overflow-hidden "
+                    className="relative sm:w-[400px] min-w-[300px] h-full bg-slate-900 p-10 pb-8  z-20 overflow-hidden "
                   >
                     {/* Radial gradient */}
                     <div
