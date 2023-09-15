@@ -162,7 +162,7 @@ const News = () => {
         sub={"Inspired by the Bulls"}
       />
 
-      <Spotlight className="flex flex-row flex-wrap gap-5  items-center justify-center">
+      <Spotlight className="flex flex-row flex-wrap gap-6  items-center justify-center">
         {loading && <Loading />}
         {!loading && dummyNewsData.length === 0 ? <NothingLoading /> : null}
         {!loading &&
@@ -201,7 +201,7 @@ const News = () => {
                 <SpotlightCard>
                   <div
                     key={index}
-                    className="relative sm:w-[400px] w-[300px] h-[300px] bg-slate-900 p-6 pb-8  z-20 overflow-hidden"
+                    className="relative sm:w-[400px] min-w-[280px] h-[300px] bg-slate-900 p-6 pb-8  z-20 overflow-hidden"
                   >
                     {/* Radial gradient */}
                     <div
@@ -247,7 +247,7 @@ const News = () => {
                         >
                           <path d="M12.82 8.116A.5.5 0 0 0 12 8.5V10h-.185a3 3 0 0 1-2.258-1.025l-.4-.457-1.328 1.519.223.255A5 5 0 0 0 11.815 12H12v1.5a.5.5 0 0 0 .82.384l3-2.5a.5.5 0 0 0 0-.768l-3-2.5ZM12.82.116A.5.5 0 0 0 12 .5V2h-.185a5 5 0 0 0-3.763 1.708L3.443 8.975A3 3 0 0 1 1.185 10H1a1 1 0 1 0 0 2h.185a5 5 0 0 0 3.763-1.708l4.609-5.267A3 3 0 0 1 11.815 4H12v1.5a.5.5 0 0 0 .82.384l3-2.5a.5.5 0 0 0 0-.768l-3-2.5ZM1 4h.185a3 3 0 0 1 2.258 1.025l.4.457 1.328-1.52-.223-.254A5 5 0 0 0 1.185 2H1a1 1 0 0 0 0 2Z" />
                         </svg>
-                        <span>Connect</span>
+                        <span>Explore</span>
                       </a>
                     </div>
                   </div>

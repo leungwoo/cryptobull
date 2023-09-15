@@ -9,7 +9,8 @@ const DropdownMenuDemo = () => {
         <div className="flex flex-row gap-2 items-center">
           <p className="text-tertiary">Menu</p>
           <button
-            className=" w-[35px] h-[35px] inline-flex items-center justify-center bg-opacity-20 backdrop-blur-lg bg-pink   "
+            className=" w-[35px] h-[35px]  bg-opacity-20 backdrop-blur-lg   inline-flex justify-center items-center whitespace-nowrap rounded-lg bg-slate-800 hover:bg-slate-900 border border-slate-700 px-3 py-1.5 text-sm font-medium text-slate-300 focus-visible:outline-none focus-visible:ring focus-visible:ring-indigo-300 dark:focus-visible:ring-slate-600 transition-colors duration-150
+  "
             aria-label="Customise options"
           >
             <HamburgerMenuIcon color="#ffffff" />
