@@ -6,7 +6,7 @@ const Hero = () => {
   return (
     <div
       id="home"
-      className="w-full h-[750px] bg-primary bg-cover bg-right-top relative"
+      className="w-full h-[750px] bg-primary bg-no-repeat bg-right bg-slate-950 relative"
     >
       <Header />
       <div className="flex flex-col justify-end h-full">
