@@ -9,10 +9,10 @@ const DropdownMenuDemo = () => {
         <div className="flex flex-row gap-2 items-center">
           <p className="text-tertiary">Menu</p>
           <button
-            className="rounded-full w-[35px] h-[35px] inline-flex items-center justify-center bg-opacity-20 backdrop-blur-lg bg-pink   "
+            className=" w-[35px] h-[35px] inline-flex items-center justify-center bg-opacity-20 backdrop-blur-lg bg-pink   "
             aria-label="Customise options"
           >
-            <HamburgerMenuIcon color="#da058c" />
+            <HamburgerMenuIcon color="#ffffff" />
           </button>
         </div>
       </DropdownMenu.Trigger>

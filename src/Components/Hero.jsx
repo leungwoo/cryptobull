@@ -1,11 +1,13 @@
 import Header from "../Constants/Header";
 import Button from "./Button";
 import CoinBanner from "./CoinBanner";
-import withSocialIcons from "../Components/withSocialIcons";
 
 const Hero = () => {
   return (
-    <div id="home" className="w-full h-[700px] bg-primary bg-cover relative">
+    <div
+      id="home"
+      className="w-full h-[750px] bg-primary bg-cover bg-right-top relative"
+    >
       <Header />
       <div className="flex flex-col justify-end h-full">
         {/* <img
@@ -34,5 +36,4 @@ const Hero = () => {
   );
 };
 
-const HeroWithIcons = withSocialIcons(Hero);
-export default HeroWithIcons;
+export default Hero;

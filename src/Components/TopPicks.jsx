@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import axios from "axios";
 import Title from "./Title";
 import Spotlight, { SpotlightCard } from "./Spotlight";
+import withSocialIcons from "./withSocialIcons";
 const TopPicks = () => {
   const [data, setData] = useState([]);
 
@@ -38,7 +39,7 @@ const TopPicks = () => {
   return (
     <section
       id="toppicks"
-      className="bg-slate-950 px-10 py-24 bg-gradient-to-br from-slate-950 via-teal to-slate-950"
+      className="bg-slate-950 px-10 pt-24 pb-24 bg-gradient-to-t from-slate-950 via-teal to-slate-950"
     >
       <Title
         title={"What's Hot"}
@@ -73,7 +74,7 @@ const TopPicks = () => {
                   aria-hidden="true"
                 ></div>
                 <img
-                  className="inline-flex rounded-lg"
+                  className="inline-flex "
                   src={
                     "https://pbs.twimg.com/card_img/1699602423562563584/cL80BrKD?format=jpg&name=4096x4096"
                   }
@@ -127,7 +128,7 @@ const TopPicks = () => {
                   aria-hidden="true"
                 ></div>
                 <img
-                  className="inline-flex rounded-lg"
+                  className="inline-flex "
                   src={
                     "https://global-uploads.webflow.com/63c52465b53a441b76587e8f/645b60777663517ffaaac360_TAP%20opengraph.jpg"
                   }
@@ -181,7 +182,7 @@ const TopPicks = () => {
                   aria-hidden="true"
                 ></div>
                 <img
-                  className="inline-flex rounded-lg"
+                  className="inline-flex"
                   src={
                     "https://u.today/sites/default/files/styles/1600x900/public/2023-08/37101_1.jpg"
                   }
@@ -222,4 +223,5 @@ const TopPicks = () => {
   );
 };
 
-export default TopPicks;
+const TopPicksWithIcons = withSocialIcons(TopPicks);
+export default TopPicksWithIcons;

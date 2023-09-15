@@ -57,23 +57,23 @@ const dummyNewsData = [
       "https://plus.unsplash.com/premium_photo-1670249421308-15ae3965c326?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTN8fGNyeXB0b3xlbnwwfHwwfHx8MA%3D%3D&auto=format&fit=crop&w=800&q=60",
     createdAt: "Mon, 13 Feb 2023 12:10:00 +0000",
   },
-  {
-    url: "https://example.com/article7",
-    title: "Sample Article 7",
-    description: "Description for Sample Article 7.",
-    thumbnail:
-      "https://plus.unsplash.com/premium_photo-1670249419932-a7027d9003f8?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTl8fGNyeXB0b3xlbnwwfHwwfHx8MA%3D%3D&auto=format&fit=crop&w=800&q=60",
-    createdAt: "Tue, 14 Feb 2023 19:30:00 +0000",
-  },
-  {
-    url: "https://example.com/article8",
-    title: "Sample Article 8",
-    description:
-      " Lorem ipsum dolor, sit amet consectetur adipisicing elit. Esse quod praesentium dignissimos id facere exercitationem vero qui sapiente quisquam! In excepturi obcaecati vero eum similique praesentium, cupiditate quibusdam officiis odio?",
-    thumbnail:
-      "https://images.unsplash.com/photo-1629339942248-45d4b10c8c2f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTV8fGNyeXB0b3xlbnwwfHwwfHx8MA%3D%3D&auto=format&fit=crop&w=800&q=60",
-    createdAt: "Wed, 15 Feb 2023 14:45:00 +0000",
-  },
+  //   {
+  //     url: "https://example.com/article7",
+  //     title: "Sample Article 7",
+  //     description: "Description for Sample Article 7.",
+  //     thumbnail:
+  //       "https://plus.unsplash.com/premium_photo-1670249419932-a7027d9003f8?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTl8fGNyeXB0b3xlbnwwfHwwfHx8MA%3D%3D&auto=format&fit=crop&w=800&q=60",
+  //     createdAt: "Tue, 14 Feb 2023 19:30:00 +0000",
+  //   },
+  //   {
+  //     url: "https://example.com/article8",
+  //     title: "Sample Article 8",
+  //     description:
+  //       " Lorem ipsum dolor, sit amet consectetur adipisicing elit. Esse quod praesentium dignissimos id facere exercitationem vero qui sapiente quisquam! In excepturi obcaecati vero eum similique praesentium, cupiditate quibusdam officiis odio?",
+  //     thumbnail:
+  //       "https://images.unsplash.com/photo-1629339942248-45d4b10c8c2f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTV8fGNyeXB0b3xlbnwwfHwwfHx8MA%3D%3D&auto=format&fit=crop&w=800&q=60",
+  //     createdAt: "Wed, 15 Feb 2023 14:45:00 +0000",
+  //   },
 ];
 
 const News = () => {
@@ -141,7 +141,7 @@ const News = () => {
   return (
     <section
       id="news"
-      className="bg-gradient-to-b from-slate-950 via-pink to-slate-950 flex flex-col gap-5 items-center py-24 pb-10 px-10"
+      className="bg-gradient-to-b from-slate-950 via-pink to-slate-950 flex flex-col gap-5 items-center pt-24 pb-24 "
     >
       {loading && (
         <h1 className="text-teal text-xl font-bold p-5 items-center">
@@ -162,7 +162,7 @@ const News = () => {
         sub={"Inspired by the Bulls"}
       />
 
-      <Spotlight className="max-w-lg mx-auto grid gap-6 md:grid-cols-2 items-start lg:max-w-none group ">
+      <Spotlight className="flex flex-row flex-wrap gap-5  items-center justify-center">
         {loading && <Loading />}
         {!loading && dummyNewsData.length === 0 ? <NothingLoading /> : null}
         {!loading &&
@@ -201,7 +201,7 @@ const News = () => {
                 <SpotlightCard>
                   <div
                     key={index}
-                    className="relative h-[300px] bg-slate-900 p-6 pb-8 rounded-[inherit] z-20 overflow-hidden"
+                    className="relative sm:w-[400px] w-[300px] h-[300px] bg-slate-900 p-6 pb-8  z-20 overflow-hidden"
                   >
                     {/* Radial gradient */}
                     <div
@@ -218,7 +218,7 @@ const News = () => {
                           aria-hidden="true"
                         ></div>
                         <img
-                          className="inline-flex rounded-lg  object-cover"
+                          className="inline-flex  object-cover"
                           src={item.thumbnail}
                           width={200}
                           height={200}
@@ -228,10 +228,11 @@ const News = () => {
                       {/* Text */}
                       <div className="grow mb-5">
                         <h2 className="text-xl text-slate-200 font-bold mb-1">
-                          {item.title.slice(0, 30)}
+                          {item.title.slice(0, 15)} {"..."}
                         </h2>
                         <p className="text-sm text-slate-500">
-                          {item.description.slice(0, 50)}
+                          {item.description.slice(0, 30)}
+                          {"..."}
                         </p>
                       </div>
                       <a
