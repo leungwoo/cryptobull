@@ -4,36 +4,39 @@ import Title from "./Title";
 import Spotlight, { SpotlightCard } from "./Spotlight";
 import withSocialIcons from "./withSocialIcons";
 const TopPicks = () => {
-  const [data, setData] = useState([]);
-
+  const [coin, setCoin] = useState([]);
   useEffect(() => {
-    const getData = async () => {
+    const getCoins = async () => {
       const options = {
         method: "GET",
-        url: "https://coingecko.p.rapidapi.com/coins/list",
+        url: "https://coinranking1.p.rapidapi.com/coins",
+        params: {
+          timePeriod: "24h",
+          uuids: [
+            "-l8Mn2pVlRs-p",
+            "o35j_d524",
+            "tJAxYUnrfv",
+            "SzY719EJf",
+            "1Uo6s62Oc",
+          ],
+          limit: 10,
+        },
         headers: {
           "X-RapidAPI-Key":
             "9ea0101f77msh5ed0ff4528c6926p15db84jsn0ee898e01cd6",
-          "X-RapidAPI-Host": "coingecko.p.rapidapi.com",
+          "X-RapidAPI-Host": "coinranking1.p.rapidapi.com",
         },
       };
-      const includesToken = ["casper-network", "ripple"];
+
       try {
         const response = await axios.request(options);
-        const tokens = response.data;
-        console.log(response.data);
 
-        const filteredToken = tokens.filter((token) =>
-          includesToken.some((word) =>
-            token.id.toLowerCase().match(word.toLowerCase())
-          )
-        );
-        setData(filteredToken);
+        setCoin(response.data.data.coins);
       } catch (error) {
         console.error(error);
       }
     };
-    getData();
+    getCoins();
   }, []);
 
   return (
@@ -55,169 +58,64 @@ const TopPicks = () => {
           </li>
         ))}
       </ol> */}
-      <Spotlight className="max-w-sm mx-auto grid gap-6 lg:grid-cols-3 items-start lg:max-w-none group ">
-        {/* Card #1 */}
-        <SpotlightCard>
-          <div className="relative h-full bg-slate-900 p-6 pb-8  z-20 overflow-hidden">
-            {/* Radial gradient */}
-            <div
-              className="absolute bottom-0 translate-y-1/2 left-1/2 -translate-x-1/2 pointer-events-none -z-10 w-1/2 aspect-square"
-              aria-hidden="true"
-            >
-              <div className="absolute inset-0 translate-z-0 bg-slate-800 rounded-full blur-[90px]"></div>
-            </div>
-            <div className="flex flex-col h-full items-center text-center">
-              {/* Image */}
-              <div className="relative inline-flex">
-                <div
-                  className="w-[40%] h-[40%] absolute inset-0 m-auto -translate-y-[10%] blur-3xl -z-10 rounded-full bg-indigo-600"
-                  aria-hidden="true"
-                ></div>
-                <img
-                  className="inline-flex "
-                  src={
-                    "https://pbs.twimg.com/card_img/1699602423562563584/cL80BrKD?format=jpg&name=4096x4096"
-                  }
-                  width={200}
-                  height={200}
-                  alt="Card 01"
-                />
-              </div>
-              {/* Text */}
-              <div className="grow mb-5">
-                <h2 className="text-xl text-slate-200 font-bold mb-1">
-                  Amazing Integration
-                </h2>
-                <p className="text-sm text-slate-500">
-                  Quickly apply filters to refine your issues lists and create
-                  custom views.
-                </p>
-              </div>
-              <a
-                className="inline-flex justify-center items-center whitespace-nowrap rounded-lg bg-slate-800 hover:bg-slate-900 border border-slate-700 px-3 py-1.5 text-sm font-medium text-slate-300 focus-visible:outline-none focus-visible:ring focus-visible:ring-indigo-300 dark:focus-visible:ring-slate-600 transition-colors duration-150"
-                href="#0"
+      <Spotlight className="flex flex-row max-w-[1440px]  mx-auto  overflow-x-scroll gap-5">
+        {coin.map((token, index) => (
+          <SpotlightCard
+            key={index}
+            className="relative flex-shrink-0 w-[300px] min-w-[300px]  h-full bg-slate-900 p-6 pb-8  z-20 "
+          >
+            <div className="relative w-[300px] h-full bg-slate-900 p-6 pb-8  z-20 ">
+              {/* Radial gradient */}
+              <div
+                className="absolute bottom-0 translate-y-1/2 left-1/2 -translate-x-1/2 pointer-events-none -z-10 w-1/2 aspect-square"
+                aria-hidden="true"
               >
-                <svg
-                  className="fill-slate-500 mr-2"
-                  xmlns="http://www.w3.org/2000/svg"
-                  width="16"
-                  height="14"
+                <div className="absolute inset-0 translate-z-0 bg-slate-800 rounded-full blur-[90px]"></div>
+              </div>
+              <div className="flex flex-col h-full items-center text-center">
+                {/* Image */}
+                <div className="relative inline-flex">
+                  <div
+                    className="w-[40%] h-[40%] absolute inset-0 m-auto -translate-y-[10%] blur-3xl -z-10 rounded-full bg-indigo-600"
+                    aria-hidden="true"
+                  ></div>
+                  <img
+                    className="inline-flex w-44 h-40 object-contain "
+                    src={token.iconUrl}
+                    width={200}
+                    height={200}
+                    alt="Card 01"
+                  />
+                </div>
+                {/* Text */}
+                <div className="grow mb-5">
+                  <h2 className="text-xl text-slate-200 font-bold mb-1">
+                    {token.name}
+                  </h2>
+                  <p className="text text-pink text-lg font-bold">
+                    {token.price.slice(0, 5)}
+                  </p>
+                </div>
+                <a
+                  className="inline-flex justify-center items-center whitespace-nowrap rounded-lg bg-slate-800 hover:bg-slate-900 border border-slate-700 px-3 py-1.5 text-sm font-medium text-slate-300 focus-visible:outline-none focus-visible:ring focus-visible:ring-indigo-300 dark:focus-visible:ring-slate-600 transition-colors duration-150"
+                  href={token.coinrankingUrl}
+                  target="_blank"
+                  rel="noreferrer"
                 >
-                  <path d="M12.82 8.116A.5.5 0 0 0 12 8.5V10h-.185a3 3 0 0 1-2.258-1.025l-.4-.457-1.328 1.519.223.255A5 5 0 0 0 11.815 12H12v1.5a.5.5 0 0 0 .82.384l3-2.5a.5.5 0 0 0 0-.768l-3-2.5ZM12.82.116A.5.5 0 0 0 12 .5V2h-.185a5 5 0 0 0-3.763 1.708L3.443 8.975A3 3 0 0 1 1.185 10H1a1 1 0 1 0 0 2h.185a5 5 0 0 0 3.763-1.708l4.609-5.267A3 3 0 0 1 11.815 4H12v1.5a.5.5 0 0 0 .82.384l3-2.5a.5.5 0 0 0 0-.768l-3-2.5ZM1 4h.185a3 3 0 0 1 2.258 1.025l.4.457 1.328-1.52-.223-.254A5 5 0 0 0 1.185 2H1a1 1 0 0 0 0 2Z" />
-                </svg>
-                <span>Explore</span>
-              </a>
-            </div>
-          </div>
-        </SpotlightCard>
-        {/* Card #2 */}
-        <SpotlightCard>
-          <div className="relative h-full bg-slate-900 p-6 pb-8  z-20 overflow-hidden">
-            {/* Radial gradient */}
-            <div
-              className="absolute bottom-0 translate-y-1/2 left-1/2 -translate-x-1/2 pointer-events-none -z-10 w-1/2 aspect-square"
-              aria-hidden="true"
-            >
-              <div className="absolute inset-0 translate-z-0 bg-slate-800 rounded-full blur-[80px]"></div>
-            </div>
-            <div className="flex flex-col h-full items-center text-center">
-              {/* Image */}
-              <div className="relative inline-flex">
-                <div
-                  className="w-[40%] h-[40%] absolute inset-0 m-auto -translate-y-[10%] blur-3xl -z-10 rounded-full bg-indigo-600"
-                  aria-hidden="true"
-                ></div>
-                <img
-                  className="inline-flex "
-                  src={
-                    "https://global-uploads.webflow.com/63c52465b53a441b76587e8f/645b60777663517ffaaac360_TAP%20opengraph.jpg"
-                  }
-                  width={200}
-                  height={200}
-                  alt="Card 02"
-                />
+                  <svg
+                    className="fill-slate-500 mr-2"
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="16"
+                    height="14"
+                  >
+                    <path d="M12.82 8.116A.5.5 0 0 0 12 8.5V10h-.185a3 3 0 0 1-2.258-1.025l-.4-.457-1.328 1.519.223.255A5 5 0 0 0 11.815 12H12v1.5a.5.5 0 0 0 .82.384l3-2.5a.5.5 0 0 0 0-.768l-3-2.5ZM12.82.116A.5.5 0 0 0 12 .5V2h-.185a5 5 0 0 0-3.763 1.708L3.443 8.975A3 3 0 0 1 1.185 10H1a1 1 0 1 0 0 2h.185a5 5 0 0 0 3.763-1.708l4.609-5.267A3 3 0 0 1 11.815 4H12v1.5a.5.5 0 0 0 .82.384l3-2.5a.5.5 0 0 0 0-.768l-3-2.5ZM1 4h.185a3 3 0 0 1 2.258 1.025l.4.457 1.328-1.52-.223-.254A5 5 0 0 0 1.185 2H1a1 1 0 0 0 0 2Z" />
+                  </svg>
+                  <span>Explore</span>
+                </a>
               </div>
-              {/* Text */}
-              <div className="grow mb-5">
-                <h2 className="text-xl text-slate-200 font-bold mb-1">
-                  Amazing Integration
-                </h2>
-                <p className="text-sm text-slate-500">
-                  Quickly apply filters to refine your issues lists and create
-                  custom views.
-                </p>
-              </div>
-              <a
-                className="inline-flex justify-center items-center whitespace-nowrap rounded-lg bg-slate-800 hover:bg-slate-900 border border-slate-700 px-3 py-1.5 text-sm font-medium text-slate-300 focus-visible:outline-none focus-visible:ring focus-visible:ring-indigo-300 dark:focus-visible:ring-slate-600 transition-colors duration-150"
-                href="#0"
-              >
-                <svg
-                  className="fill-slate-500 mr-2"
-                  xmlns="http://www.w3.org/2000/svg"
-                  width="16"
-                  height="14"
-                >
-                  <path d="M12.82 8.116A.5.5 0 0 0 12 8.5V10h-.185a3 3 0 0 1-2.258-1.025l-.4-.457-1.328 1.519.223.255A5 5 0 0 0 11.815 12H12v1.5a.5.5 0 0 0 .82.384l3-2.5a.5.5 0 0 0 0-.768l-3-2.5ZM12.82.116A.5.5 0 0 0 12 .5V2h-.185a5 5 0 0 0-3.763 1.708L3.443 8.975A3 3 0 0 1 1.185 10H1a1 1 0 1 0 0 2h.185a5 5 0 0 0 3.763-1.708l4.609-5.267A3 3 0 0 1 11.815 4H12v1.5a.5.5 0 0 0 .82.384l3-2.5a.5.5 0 0 0 0-.768l-3-2.5ZM1 4h.185a3 3 0 0 1 2.258 1.025l.4.457 1.328-1.52-.223-.254A5 5 0 0 0 1.185 2H1a1 1 0 0 0 0 2Z" />
-                </svg>
-                <span>Explore</span>
-              </a>
             </div>
-          </div>
-        </SpotlightCard>
-        {/* Card #3 */}
-        <SpotlightCard>
-          <div className="relative h-full bg-slate-900 p-6 pb-8  z-20 overflow-hidden">
-            {/* Radial gradient */}
-            <div
-              className="absolute bottom-0 translate-y-1/2 left-1/2 -translate-x-1/2 pointer-events-none -z-10 w-1/2 aspect-square"
-              aria-hidden="true"
-            >
-              <div className="absolute inset-0 translate-z-0 bg-slate-800 rounded-full blur-[80px]"></div>
-            </div>
-            <div className="flex flex-col h-full items-center text-center">
-              {/* Image */}
-              <div className="relative inline-flex">
-                <div
-                  className="w-[40%] h-[40%] absolute inset-0 m-auto -translate-y-[10%] blur-3xl -z-10 rounded-full bg-indigo-600"
-                  aria-hidden="true"
-                ></div>
-                <img
-                  className="inline-flex"
-                  src={
-                    "https://u.today/sites/default/files/styles/1600x900/public/2023-08/37101_1.jpg"
-                  }
-                  width={200}
-                  height={200}
-                  alt="Card 03"
-                />
-              </div>
-              {/* Text */}
-              <div className="grow mb-5">
-                <h2 className="text-xl text-slate-200 font-bold mb-1">
-                  Amazing Integration
-                </h2>
-                <p className="text-sm text-slate-500">
-                  Quickly apply filters to refine your issues lists and create
-                  custom views.
-                </p>
-              </div>
-              <a
-                className="inline-flex justify-center items-center whitespace-nowrap rounded-lg bg-slate-800 hover:bg-slate-900 border border-slate-700 px-3 py-1.5 text-sm font-medium text-slate-300 focus-visible:outline-none focus-visible:ring focus-visible:ring-indigo-300 dark:focus-visible:ring-slate-600 transition-colors duration-150"
-                href="#0"
-              >
-                <svg
-                  className="fill-slate-500 mr-2"
-                  xmlns="http://www.w3.org/2000/svg"
-                  width="16"
-                  height="14"
-                >
-                  <path d="M12.82 8.116A.5.5 0 0 0 12 8.5V10h-.185a3 3 0 0 1-2.258-1.025l-.4-.457-1.328 1.519.223.255A5 5 0 0 0 11.815 12H12v1.5a.5.5 0 0 0 .82.384l3-2.5a.5.5 0 0 0 0-.768l-3-2.5ZM12.82.116A.5.5 0 0 0 12 .5V2h-.185a5 5 0 0 0-3.763 1.708L3.443 8.975A3 3 0 0 1 1.185 10H1a1 1 0 1 0 0 2h.185a5 5 0 0 0 3.763-1.708l4.609-5.267A3 3 0 0 1 11.815 4H12v1.5a.5.5 0 0 0 .82.384l3-2.5a.5.5 0 0 0 0-.768l-3-2.5ZM1 4h.185a3 3 0 0 1 2.258 1.025l.4.457 1.328-1.52-.223-.254A5 5 0 0 0 1.185 2H1a1 1 0 0 0 0 2Z" />
-                </svg>
-                <span>Explore</span>
-              </a>
-            </div>
-          </div>
-        </SpotlightCard>
+          </SpotlightCard>
+        ))}
       </Spotlight>
     </section>
   );

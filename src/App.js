@@ -8,15 +8,15 @@ import TopPicksWithIcons from "./Components/TopPicks";
 
 function App() {
   return (
-    <div className="max-w-[1440px] mx-auto ">
+    <div className="max-w-[1440px] mx-auto bg-slate-950 max-h-screen ">
       <div className=" flex flex-col ">
         <Hero />
         <NewsWithIcons />
         <TopPicksWithIcons />
+        <Footer />
       </div>
-      <Footer />
     </div>
   );
 }
-//const AppWithIcons = withSocialIcons(App);
+
 export default App;

@@ -37,9 +37,9 @@ const cryptoCoins = [
   {
     image: polygon,
   },
-  {
-    image: ltc,
-  },
+  //   {
+  //     image: ltc,
+  //   },
   {
     image: ape,
   },

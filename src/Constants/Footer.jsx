@@ -1,9 +1,7 @@
-import React from "react";
-
 const Footer = () => {
   return (
-    <div className="flex flex-row bg-slate-400 h-12 bottom-0 items-start">
-      Footer
+    <div className="flex flex-col h-40 bg-slate-950 text-slate-500  bottom-0 w-full items-center gap-5  pt-10">
+      © 2021 CryptoBull. All rights reserved.
     </div>
   );
 };

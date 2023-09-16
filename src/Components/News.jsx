@@ -218,7 +218,7 @@ const News = () => {
                           aria-hidden="true"
                         ></div>
                         <img
-                          className="inline-flex  object-cover"
+                          className="inline-flex  object-cover w-44 h-40"
                           src={item.thumbnail}
                           width={200}
                           height={200}
