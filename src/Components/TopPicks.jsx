@@ -49,15 +49,7 @@ const TopPicks = () => {
         subtitle={"Top Crypto Distruptors"}
         sub={"These are my potential 1000x"}
       />
-      {/* <ol>
-        {data.slice(0, 10).map((item, index) => (
-          <li key={index}>
-            <p>ID:{item.id}</p>
-            <p>Symbol: {item.symbol}</p>
-            <p>Name: {item.name}</p>
-          </li>
-        ))}
-      </ol> */}
+
       <Spotlight className="flex flex-row max-w-[1440px]  mx-auto  overflow-x-scroll gap-5">
         {coin.map((token, index) => (
           <SpotlightCard

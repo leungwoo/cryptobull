@@ -23,17 +23,6 @@ function Spotlight({ children, className = "" }) {
     };
   }, [setBoxes]);
 
-  useEffect(() => {
-    onMouseMove();
-  }, [mousePosition]);
-
-  const initContainer = () => {
-    if (containerRef.current) {
-      containerSize.current.w = containerRef.current.offsetWidth;
-      containerSize.current.h = containerRef.current.offsetHeight;
-    }
-  };
-
   const onMouseMove = () => {
     if (containerRef.current) {
       const rect = containerRef.current.getBoundingClientRect();
@@ -53,6 +42,17 @@ function Spotlight({ children, className = "" }) {
           box.style.setProperty("--mouse-y", `${boxY}px`);
         });
       }
+    }
+  };
+
+  useEffect(() => {
+    onMouseMove();
+  }, [mousePosition, onMouseMove]);
+
+  const initContainer = () => {
+    if (containerRef.current) {
+      containerSize.current.w = containerRef.current.offsetWidth;
+      containerSize.current.h = containerRef.current.offsetHeight;
     }
   };
 
