@@ -148,13 +148,6 @@ const News = () => {
           {newsLoadingMessage}
         </h1>
       )}
-      {/* <button
-        className="bg-teal px-4 py-2 text-lg font-semibold rounded-xl"
-        onClick={() => setApiFetchedData(!apiFetchedData)}
-      >
-        {" "}
-        Refresh
-      </button> */}
 
       <Title
         title={"INTRODUCING"}
@@ -169,35 +162,6 @@ const News = () => {
           dummyNewsData.map((item, index) => {
             return (
               <>
-                {/* <div key={index} className=" max-w-lg  py-5 px-10 ">
-                  <div className="hover:shadow-lg hover:shadow-white transition-all duration-200 ease-in-out p-5  h-[580px] gap-4 flex flex-col items-center bg-teal bg-opacity-30  rounded-br-3xl rounded-tr-3xl ">
-                    <img
-                      src={item.thumbnail}
-                      alt="thumbnail"
-                      className=" w-full h-[300px] object-cover rounded-tr-3xl border-2 border-teal"
-                    />
-                    <div className=" flex flex-col gap-2 px-4 items-center">
-                      <p className="xl:text-4xl text-2xl font-bold text-center text-white">
-                        {item.title.slice(0, 30)}
-                        {"..."}
-                      </p>
-                      <p className="text-gray-300 leading-8">
-                        {item.description.slice(0, 100)}
-                        {"..."}
-                      </p>
-                      <Button name={"Read more"}>
-                        <a
-                          href={`${item.url}`}
-                          target="_blank"
-                          rel="noreferrer"
-                        >
-                          {" "}
-                          Read More{" "}
-                        </a>
-                      </Button>
-                    </div>
-                  </div>
-                </div> */}
                 <SpotlightCard>
                   <div
                     key={index}
